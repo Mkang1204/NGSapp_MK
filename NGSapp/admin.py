@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Run
 
-admin.site.register(Runs)
+admin.site.register(Run)
 
 # Register your models here.
