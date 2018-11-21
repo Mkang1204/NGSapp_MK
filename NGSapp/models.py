@@ -60,4 +60,4 @@ class Run(models.Model):
     Protocol = models.CharField(max_length=10)
     ClusterDensity = models.CharField(max_length=10)
     Comments = models.CharField(max_length=300)
-    Pool_id = models.ForeignKey(Pool, on_delete = models.CASCADE)
+    Pool_id = models.ForeignKey(Pool, on_delete = models.CASCADE, null = True)

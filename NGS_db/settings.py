@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -138,7 +138,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 
 # Temp_Path = os.path.realpath('.')
-
-# TEMPLATE_DIRS = (
-#     Temp_Path +"/template"
-# )
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS = (
+    os.path.join(SETTINGS_PATH, 'templates'),
+)
