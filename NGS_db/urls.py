@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('NGSapp.urls'),
     # 
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', include('accounts.urls')),
 ]
 
 

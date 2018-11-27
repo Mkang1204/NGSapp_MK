@@ -1,4 +1,4 @@
-## 20181120 MK fixed eror - 404 not find admin page -
+## 20181120 MK fixed error - 404 not find admin page -
 # added import include and path to admin
 
 
