@@ -41,7 +41,7 @@ class Run(models.Model):
     '''A Next geenration sequncing run from NGS core'''
     id = models.IntegerField(primary_key = True)
     # user = models.CharField(max_length=50)
-    runDate = models.DateTimeField(blank=True, null = True)
+    RunDate = models.DateTimeField(blank=True, null = True)
     FlowCell_ID = models.CharField(max_length = 10)
     ReagentsCartridge_Cycles = models.IntegerField
     ReagentsCartridge_Lot = models.CharField(max_length = 20)

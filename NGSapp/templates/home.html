@@ -57,8 +57,6 @@
             <div class="w3-display-container">
             <img class="w3-display-container" alt="NGS Database" src="//assets.illumina.com/content/dam/illumina-marketing/images/systems/v2/web-graphic/learn-about-ngs-placeholder-web-graphic.jpg">    
             <div class="w3-display-topleft w3-container">NGS Database</div>
-            <div class="w3-display-topright w3-container">Top Right</div>
-
             <h1><a href="/">NGS Database</a></h1>
         </div>
         
@@ -72,34 +70,67 @@
         
         <div class = 'post'>   
             <p id = 'date'>Last updated: </p>
-            <h2><a href="">Search by Date</a></h2>
+            <h2>Search by Run Date</h2>
+            <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button href="{% url 'result_view'}" type="Search">Search</button>
+                </form>
             <p>Please input the date that you want to search within:</p>
         </div>
         
 
-
         <div>
             <p>Last updated: get_date</p>
-            <h2><a href="">Search by User</a></h2>
-            <p>Please input the user/PI that is involved in the RNAseq.</p>
+            <h2>Search by User</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button href="{% url 'result_view'}" type="Search">Search</button>
+            </form>
+            <p>Please input the Investigator/PI that is involved in the RNAseq.</p>
         </div>
 
         <div>
             <p>Last updated: get_date</p>
-            <h2><a href="">Search by RunID</a></h2>
+            <h2>Search by RunID</h2>
+            <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button href="{% url 'result_view'}" type="Search">Search</button>
+                </form>
             <p>If you remember the RunID that corresponding to the run from the sequencing log, please insert it here.</p>
         </div>
 
         <div>
             <strong>Datbase user guide<strong>
         </div>
+        
+
+
+
+
+        <div>
+            <strong>List of all the historical runs:<strong>
+            <ul>
+                {% for run in all_runs %}
+                    <li><a href = "{% url 'NGSapp:home' Run.id %}">{{Run.RunName}}</a></li>
+                {% endfor %}
+            </ul>
+   
+        </div>
+
+
+
+
+
 
 
         <div>
             <strong>About NGS - Video from Illumina<strong>
         </div>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/fCd6B5HRaZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="500" height="270" src="https://www.youtube.com/embed/fCd6B5HRaZ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         
 
     </body>
@@ -108,6 +139,244 @@
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endif %}
 {% endblock %}
 

@@ -72,3 +72,6 @@ def change_password(request):
         args = {'form': form}
         return render(request, 'accounts/change_password.html', args)
 
+
+def reset_password(request):
+    return render(request, 'accounts/reset_password.html', args)
