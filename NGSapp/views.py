@@ -20,10 +20,10 @@ def result_view(request):
     #     form = PostForm()
 
     data = Run.objects.all()
-    run = {
+    runs = {
         'run_':data
     }
-    return render(request, 'NGSapp/result_view.html',{'form':form})
+    return render(request, 'NGSapp/result_view.html',{'runs':runs})
 
 
 def search_by_date(request):
