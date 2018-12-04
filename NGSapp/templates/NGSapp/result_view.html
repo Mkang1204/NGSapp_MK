@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Result_view{% endblock %}
+{% block title %}{{Result_view}}{% endblock %}
 
 {% block content %}
   <h1>Search Results</h1>
@@ -13,6 +13,10 @@
     {{ Run.ExportFolderName }}
     {{ Run.PI }}
     {{ Run.Investigator }}
+
+
+
+    <button type = "submit" href="{% url 'home' %}">Back to Search</button>
 {% endfor %}
 {% endblock %}
 
@@ -28,4 +32,3 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'home' %}">Back to Search</a>

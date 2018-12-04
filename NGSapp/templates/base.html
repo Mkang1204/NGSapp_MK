@@ -1,12 +1,15 @@
-<html class = "gr__feinberg_northwestern_edu" lang = "en"> == $0
+<html>
+<!-- <html class = "gr__feinberg_northwestern_edu" lang = "en"> == $0 -->
+
     <head>
         <title>NGS Database</title>
+        
         {% load static %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
     </head>
-    
+
     <body>
 
         <nav class="navbar navbar-inverse">
@@ -19,16 +22,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{% url 'music:index' %}">Viberr</a>
+                    <a class="navbar-brand" href="{% url 'NGSapp:index' %}">Viberr</a>
                 </div>
         
                 <!-- Items -->
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
-                        <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'music:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
-                        <li class="{% block songs_active %}{% endblock %}"><a href="{% url 'music:songs' 'all' %}"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>
+                        <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'NGSapp:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
+                        <li class="{% block songs_active %}{% endblock %}"><a href="{% url 'NGSapp:songs' 'all' %}"><span class="glyphicon glyphicon-NGSapp" aria-hidden="true"></span>&nbsp; Songs</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'music:index' %}">
+                    <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'NGSapp:index' %}">
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
                         </div>
@@ -36,12 +39,12 @@
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{% url 'music:create_album' %}">
+                            <a href="{% url 'NGSapp:create_album' %}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'music:logout_user' %}">
+                            <a href="{% url 'NGSapp:logout_user' %}">
                                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
                             </a>
                         </li>
@@ -52,15 +55,17 @@
         </nav>
         <div class="page-header">
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">NGSapp</a></h1>
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-        {% block content %}
-        {% endblock %}
+
                 </div>
             </div>
         </div>
+        {% block content %}
+        {% endblock %}
     </body>
+
 </html>
