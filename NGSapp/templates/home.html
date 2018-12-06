@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}NGS - Home{% endblock %}
+{% block title %}NGSapp - Home{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
 
@@ -9,44 +9,8 @@
 
 <!-- {% load static %} -->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <html>
-
-
-    <head>
-        <style>
-            body {background-color: rgb(170, 225, 238);}
-            h1   {
-                color: purple;
-                margin-left: 40px;
-            }
-            p    {
-                color: black;
-                margin-left: 40px;
-            
-            }
-
-            h2   {
-                color: purple;
-                margin-left: 40px;
-            }
-            
-
-        </style>
-
-
-
-        <title>NGS Database - test</title>
-
-        
-        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-         -->
-
-    </head>
+    <link rel="shortcut icon" type="image/png" href="{%  static 'icon.ico' %}"/>
     
     <body>   
         
@@ -54,7 +18,7 @@
             <img class="w3-display-container" alt="NGS Database" src="//assets.illumina.com/content/dam/illumina-marketing/images/systems/v2/web-graphic/learn-about-ngs-placeholder-web-graphic.jpg">    
             <div class="w3-display-topleft w3-container">NGS Database</div>
             <!-- description for the picture -->
-            <h2><a href="//www.feinberg.northwestern.edu/"></a>Feinberg School of Medicine</h2>
+            <h2><a href="//www.feinberg.northwestern.edu/"></a>Budinger/Misharin Lab</h2>
         </div>
         
             
