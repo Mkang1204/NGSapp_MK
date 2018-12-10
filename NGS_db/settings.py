@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,12 +85,13 @@ DATABASES = {
         # 'OPTIONS': {
         #     'read_default_file': '/Users/mkh1805/Box/NGS-DB/RNAseq_DB/testNGS/static/my.cnf',
         # },
-    
+        # 'CONN_MAX_AGE': 2,
         'NAME': 'NGSapp',
         'USER':'root',
         'PASSWORD':'1994120456',
         'PORT':'3306',
         'HOST': '127.0.0.1',
+        # sqlalchemy_pool_recycle = 90
     }
 }
 
